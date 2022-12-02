@@ -12,7 +12,7 @@ namespace AdventOfCode.DayOne
         public static void Solve()
         {
             Console.WriteLine("Day 1");
-            var input = ParseInput.Parse("C:\\Users\\TIBOFRF\\Desktop\\dev\\AoC\\AdventOfCode\\src\\AdventOfCode\\DayOne\\input.txt");
+            var input = ParseInput.Parse("..//..//..//DayOne//input.txt");
 
             var result = new List<int>();
             int counter = 0;

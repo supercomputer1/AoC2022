@@ -13,7 +13,7 @@ namespace AdventOfCode.DayTwo
         public static void Solve()
         {
             Console.WriteLine("Day 2");
-            var input = ParseInput.Parse("C:\\Users\\TIBOFRF\\Desktop\\dev\\AoC\\AdventOfCode\\src\\AdventOfCode\\DayTwo\\input.txt");
+            var input = ParseInput.Parse("..//..//..//DayTwo//input.txt");
 
             var partOne = SolvePartOne(input);
             var partTwo = SolvePartTwo(input);
@@ -62,7 +62,7 @@ namespace AdventOfCode.DayTwo
             int points = 0;
             foreach (var i in input)
             {
-                var key = i.Split().First() + i.Split().Last();
+                var key = i.Replace(" ", "");
                 points += possibleMoves[key];
             }
 
@@ -94,7 +94,7 @@ namespace AdventOfCode.DayTwo
             int points = 0;
             foreach (var i in input)
             {
-                var key = i.Split().First() + i.Split().Last();
+                var key = i.Replace(" ", "");
                 points += possibleMoves[key];
             }
 
