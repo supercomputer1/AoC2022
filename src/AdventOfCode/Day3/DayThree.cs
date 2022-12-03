@@ -5,70 +5,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode.DayThree
+namespace AdventOfCode.Day3
 {
     public static class DayThree
     {
-
         private static Dictionary<char, int> priorities = CreatePrio(); 
-
         public static void Solve()
         {
             Console.WriteLine("Day 3");
             var input = Parser.ParseAsList("..//..//..//Day3//input.txt");
 
-            Console.WriteLine($"Part one: {SolvePartOne(input)}");
-            Console.WriteLine($"Part two: {SolvePartTwo(input)}");
+            int p1 = 0; 
+            foreach (var line in input)
+            {
+                var firstHalf = line.Substring(0, line.Length / 2);
+                var secondHalf = line.Substring(line.Length / 2);
+                var c = firstHalf.Intersect(secondHalf).First(); 
+                p1 += priorities[c]; 
+            }
+
+            int p2 = 0;
+            int i = 0; 
+            while (i < input.Count)
+            {
+                var c = input[i].Intersect(input[i+1]).Intersect(input[i+2]).First();
+                p2 += priorities[c];
+                i += 3; 
+            }
+
+
+            Console.WriteLine($"Part one: {p1}");
+            Console.WriteLine($"Part two: {p2}");
         }
 
-        private static int SolvePartOne(List<string> input)
-        {
-            var rucksacks = new List<Rucksack>();
-            foreach (var i in input)
-            {
-                var firstHalf = i.Substring(0, i.Length / 2);
-                var secondHalf = i.Substring(i.Length / 2);
-
-                rucksacks.Add(new Rucksack(firstHalf, secondHalf));
-            }
-
-            var result = new List<int>();  
-            foreach (var rucksack in rucksacks)
-            {
-                int prio = priorities[rucksack.GetCommonCharacter()];
-                result.Add(prio); 
-            }
-
-            return result.Sum(); 
-        }
-
-        private static int SolvePartTwo(List<string> input)
-        {
-            int counter = 1;
-            var group = new List<string>();
-            var stackedRucksacks = new List<RucksackWithBadges>(); 
-            foreach (var i in input)
-            {
-                group.Add(i);
-                counter++; 
-
-                if (counter == 4)
-                {
-                    stackedRucksacks.Add(new RucksackWithBadges(group[0], group[1], group[2]));    
-                    counter = 1;
-                    group.Clear(); 
-                }
-            }
-
-            var result = new List<int>();  
-            foreach (var rucksack in stackedRucksacks)
-            {
-                int prio = priorities[rucksack.GetCommonCharacter()];
-                result.Add(prio); 
-            }
-
-            return result.Sum();  
-        }
 
         private static Dictionary<char, int> CreatePrio()
         {
@@ -90,5 +59,6 @@ namespace AdventOfCode.DayThree
 
             return dict; 
         }
+
     }
 }
