@@ -10,11 +10,9 @@ namespace AdventOfCode.Day2
 
     public static class DayTwo
     {
-        public static void Solve()
+        public static void Solve(List<string> input)
         {
             Console.WriteLine("Day 2");
-            var input = Parser.ParseAsList("..//..//..//Day2//input.txt");
-
             var partOne = SolvePartOne(input);
             var partTwo = SolvePartTwo(input);
 
