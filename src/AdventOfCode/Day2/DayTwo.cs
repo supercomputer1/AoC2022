@@ -13,7 +13,7 @@ namespace AdventOfCode.DayTwo
         public static void Solve()
         {
             Console.WriteLine("Day 2");
-            var input = ParseInput.Parse("..//..//..//DayTwo//input.txt");
+            var input = Parser.ParseAsList("..//..//..//Day2//input.txt");
 
             var partOne = SolvePartOne(input);
             var partTwo = SolvePartTwo(input);
