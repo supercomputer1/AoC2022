@@ -10,10 +10,9 @@ namespace AdventOfCode.Day3
     public static class DayThree
     {
         private static Dictionary<char, int> priorities = CreatePrio(); 
-        public static void Solve()
+        public static void Solve(List<string> input)
         {
             Console.WriteLine("Day 3");
-            var input = Parser.ParseAsList("..//..//..//Day3//input.txt");
 
             int p1 = 0; 
             foreach (var line in input)

@@ -9,10 +9,9 @@ namespace AdventOfCode.Day1
 {
     public static class DayOne
     {
-        public static void Solve()
+        public static void Solve(List<string> input)
         {
             Console.WriteLine("Day 1");
-            var input = Parser.ParseAsList("..//..//..//Day1//input.txt");
 
             var result = new List<int>();
             int counter = 0;
