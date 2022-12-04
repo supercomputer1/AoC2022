@@ -16,4 +16,3 @@ DayOne.Solve(await adventOfCodeClient.GetInput(1));
 DayTwo.Solve(await adventOfCodeClient.GetInput(2));
 DayThree.Solve(await adventOfCodeClient.GetInput(3));
 DayFour.Solve(await adventOfCodeClient.GetInput(4));
-
