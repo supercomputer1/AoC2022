@@ -4,6 +4,7 @@ using AdventOfCode.Day2;
 using AdventOfCode.Day3;
 using AdventOfCode.Day4;
 using AdventOfCode.Day5;
+using AdventOfCode.Day6;
 using AdventOfCode.Util;
 using Microsoft.Extensions.Configuration;
 
@@ -18,3 +19,4 @@ DayTwo.Solve(await adventOfCodeClient.GetInput(2));
 DayThree.Solve(await adventOfCodeClient.GetInput(3));
 DayFour.Solve(await adventOfCodeClient.GetInput(4));
 DayFive.Solve(await adventOfCodeClient.GetInput(5));
+DaySix.Solve(await adventOfCodeClient.GetInput(6));
