@@ -52,7 +52,7 @@
             Console.WriteLine($"Part one: {directories.Where(w => w.Value <= 100000).Sum(s => s.Value)}");
 
             int max = 70000000 - 30000000;
-            int need =  directories["/"] - max;
+            int need = directories["/"] - max;
 
             foreach (var dir in directories.OrderBy(o => o.Value))
             {
